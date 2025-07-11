@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+</head>
+<body>
+  <h2>Welcome, <span id="userFullName"></span>!</h2>
+
+  <script>
+   const user = JSON.parse(localStorage.getItem("loggedInUser"));
+if (user) {
+  const fullName = `${user.firstName} ${user.middleName} ${user.lastName}`;
+  document.getElementById("userFullName").textContent = fullName;
+} else {
+  window.location.href = "index.html";
+}
+
+  </script>
+</body>
+</html>
